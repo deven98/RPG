@@ -1,5 +1,6 @@
 from Enemy import Enemy
 from Hero import Hero
+from random import randint
 
 class Events(object):
     def __init__(self):
@@ -12,10 +13,11 @@ class Events(object):
         hero = Hero(50,50)
         enemy = Enemy(40,40)
 
-        while hero.hp>=0 and enemy.hp>=0:
+        while hero.hp>0 and enemy.hp>0:
 
             print(" ")
             print("Enemy health is " + str(enemy.hp))
+            print("Hero health is " + str(hero.hp))
             print(" ")
             print("What attack do you want to use?")
             print("1.Fire")
@@ -32,5 +34,10 @@ class Events(object):
                 enemy.hp = enemy.hp - 20
             else:print("Invalid prompt")
 
+            hero.hp = hero.hp - (randint(5,9) * 2)
+
+
         if enemy.hp <= 0:
             print("Enemy defeated!")
+        elif hero.hp <= 0:
+            print("Hero defeated!")
