@@ -2,6 +2,8 @@ from Enemy import Enemy
 from Hero import Hero
 from random import randint
 
+#Events contain the events that happen within a storyline. EG: A small enemy encountered for a fight.
+
 class Events(object):
     def __init__(self):
         pass
