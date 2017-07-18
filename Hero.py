@@ -1,4 +1,6 @@
 from Person import Person
 
 class Hero(Person):
-    pass
+
+    def heal(self,heal):
+        self.hp = self.hp + heal
